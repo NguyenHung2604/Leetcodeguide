@@ -17,7 +17,7 @@ int countStudents1(vector<int>& students, vector<int>& sandwiches) {
             q.push(students[i]);
             st.push(sandwiches[len - i - 1]);
         }
-        int lastserve = 0; // so nguoi da dc phuc vu nhung khong thanh cong
+        int lastserve = 0; // so nguoi da dc phuc vu nhung khong thanh cong 
         // khi co nguoi bi di chuyen xuong cuoi hang, thi tang lastserve len 1, neu nhu lastserve = len thi co nghia la khong 
         // ai an banh mi do het, end process
         while(!q.empty() && lastserve < q.size())
