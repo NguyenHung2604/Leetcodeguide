@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+// muc dich la dua ca ba gia tri l, mid, r trung nhau
+
+    int findMin(vector<int>& nums) {
+
+        int l = 0; int r = nums.size() - 1;
+       
+        while(l < r)
+        {   int m = l + (r - l)/2;
+            if(nums[m] > nums[r])
+            {
+                l = m + 1;
+            }
+            else{
+                r = m;
+            }
+        }
+
+        return nums[l];
+    }
+
+int main()
+{
+    
+}
