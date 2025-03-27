@@ -9,9 +9,9 @@ using namespace std;
 
 int findMaxLength(vector<int>&nums) {
     int n = nums.size();
-    vector<int> mp(2*n + 1, -2);
+    vector<int> mp(2*n + 1, -2); // 2n+1 de mang khong bi am
     int count = 0, maxsize = 0;
-    mp[n] = -1;
+    mp[n] = -1; // tranh truong hop index bi am
     for(int i = 0; i < nums.size(); i++)
     {
         count += (nums[i] == 0) ? -1 : 1;
@@ -33,10 +33,12 @@ int findMaxLength2(vector<int>& nums)
     int count = 0, maxlen = 0;
 
     for(int i = 0; i < nums.size(); i++)
-    {
+    {   
+        count += (nums[i] == 1) ? 1 : -1;
         if(mp.find(count) != mp.end())
         {
-            maxlen = max(maxlen, i - mp[count]);
+            maxlen = max(maxlen, i - mp[count]); // li do cho viec nay do la 
+            // voi cac mang bat dau tu so co 0 == 1 tu vi tri ban dau, thi size = i + 1, do do mp[0] = -1
         }
         else{
             mp[count] = i;
