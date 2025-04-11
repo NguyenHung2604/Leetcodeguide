@@ -14,7 +14,7 @@ void print()
     cout << endl;
 }
 
-void Try(int i)
+void Try(int i)  
 {
     for(int j = 1; j <= n; j++)
     {
