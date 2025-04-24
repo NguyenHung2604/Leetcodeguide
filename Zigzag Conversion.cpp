@@ -51,10 +51,11 @@ string convert(string s, int numRows) {
         while(idx < s.size())
         {   
             res += s[idx];
-            idx+= step;
+            idx += step;
             if(i > 0 && i < numRows - 1)
-            {
+            {   if(idx - i*2 < s.size()){
                 res += s[idx - i*2];
+            }
             }
         }
     }
